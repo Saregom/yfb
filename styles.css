@@ -20,6 +20,7 @@ input, button{
 .tableSerie{
     border-collapse: collapse;
     text-align: center;
+    
 }
 
 .tableSerie td, th{

@@ -1,16 +1,23 @@
-num1 = document.getElementById("inpInicial");
-num2 = document.getElementById("inpFinal");
-
 document.formCurso.onsubmit = function(e){
     e.preventDefault()
 
-    if(num1.value > num2.value){
+    num1 = document.getElementById("inpInicial");
+    num2 = document.getElementById("inpFinal");
+
+    num1= parseInt(num1.value)
+    num2= parseInt(num2.value)
+
+    let tBody = document.querySelector("#tableSerie tbody");
+    tBody.innerHTML = "";
+
+    if(num1 > num2){
         alert("El rango inicial debe ser menor al final")
     }else{
-        for(let i=num1.value; i<=num2.value; i++){
+        for(let i=num1; i<=num2; i++){
             let next = false;
             let j = i;
             let list=[]
+            console.log(list)
     
             while(next == false){
                 if(j%3 == 0){
@@ -28,19 +35,15 @@ document.formCurso.onsubmit = function(e){
             }
             
             if(j < 7){
-                let tBody = document.querySelector("#tableSerie tbody");
-                
                 let tdatos;
                 tdatos = `<tr><td>${i}</td><td>${j}`
                 for(let num of list){
                     tdatos += ` x ${num} `
                 }
-                tdatos +=  `<td><tr>`
+                tdatos +=  `</td><tr>`
     
                 tBody.innerHTML += tdatos;
             }
         }
     }
-
-    
 }
