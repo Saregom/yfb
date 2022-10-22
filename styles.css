@@ -1,0 +1,28 @@
+*{
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 400px;
+    width: 100%;
+    margin: auto;
+}
+
+input, button{
+    margin: 10px;
+}
+
+.tableSerie{
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.tableSerie td, th{
+    border-bottom: 1px solid black;;
+    padding: 7px;
+}
